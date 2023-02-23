@@ -1,0 +1,56 @@
+:root {
+  --normal: linear-gradient(to bottom, #a8a878, #83835e);
+  --fire: linear-gradient(to bottom, #e76f38, #ba3a07);
+  --water: linear-gradient(to bottom, #6890f0, #31497f);
+  --grass: linear-gradient(to bottom, #43bc64, #228122);
+  --electric: linear-gradient(to bottom, #f8d030, #a99029);
+  --ice: linear-gradient(to bottom, #10bedd, #2b8385);
+  --fighting: linear-gradient(to bottom, #c03028, #600c07);
+  --poison: linear-gradient(to bottom, #a040a0, #521c52);
+  --ground: linear-gradient(to bottom, #e0c068, #967e3c);
+  --flying: linear-gradient(to bottom, #a890f0, #5d4d8e);
+  --psychic: linear-gradient(to bottom, #f85888, #b0214c);
+  --bug: linear-gradient(to bottom, #95c961, #5e8239);
+  --rock: linear-gradient(to bottom, #b8a038, #65571a);
+  --ghost: linear-gradient(to bottom, #705898, #31204d);
+  --dark: linear-gradient(to bottom, #918a81, #201e1b);
+  --dragon: linear-gradient(to bottom, #7038f8, #230f52);
+  --steel: linear-gradient(to bottom, #c3c3c3, #777777);
+  --fairy: linear-gradient(to bottom, #e8aed8, #d376c2);
+
+  --normal-background: rgba(168, 168, 120, 0.7);
+  --fire-background: rgba(231, 111, 56, 0.6);
+  --water-background: rgba(104, 144, 240, 0.6);
+  --grass-background: rgba(67, 188, 100, 0.5);
+  --electric-background: rgba(248, 208, 48, 0.5);
+  --ice-background: rgba(16, 190, 221, 0.4);
+  --fighting-background: rgba(192, 48, 40, 0.5);
+  --poison-background: rgba(160, 64, 160, 0.6);
+  --ground-background: rgba(224, 192, 104, 0.6);
+  --flying-background: rgba(168, 144, 240, 0.6);
+  --psychic-background: rgba(248, 88, 136, 0.5);
+  --bug-background: rgba(149, 201, 97, 0.6);
+  --rock-background: rgba(184, 160, 56, 0.5);
+  --ghost-background: rgba(112, 88, 152, 0.6);
+  --dark-background: rgba(145, 138, 129, 0.7);
+  --dragon-background: rgba(112, 56, 248, 0.4);
+  --steel-background: rgba(195, 195, 195, 1);
+  --fairy-background: rgba(232, 174, 216, 0.7);
+
+  --container: #eeeeee;
+  --container-secundary: #dedede;
+  --container-detail: #b5b5b5;
+  --backdround-gradient: linear-gradient(to right, #f1f1f1, #e3e3e3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+body {
+  width: 100%;
+  overflow-y: scroll;
+}

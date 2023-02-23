@@ -1,0 +1,95 @@
+.card,
+.card__background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 14em;
+
+  background: var(--container);
+
+  border-radius: 5px;
+  box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.15);
+
+  transition: 0.2s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-0.5em);
+}
+
+.card__background {
+  width: 90%;
+  height: 90%;
+
+  position: relative;
+  padding: 0.5em 0.5em;
+
+  border-radius: 3px;
+}
+
+.card__pokeball {
+  width: 75%;
+  opacity: 0.2;
+
+  position: absolute;
+  bottom: 3em;
+}
+
+.card__logo {
+  position: absolute;
+  top: 0.3em;
+  right: 0.5em;
+
+  width: 2em;
+}
+
+.card__image {
+  width: 8em;
+  margin-top: 1em;
+
+  position: absolute;
+  bottom: 3em;
+}
+
+.card__title {
+  position: absolute;
+  bottom: 1.5em;
+  left: 0;
+  margin: 0 0.4em;
+  text-transform: uppercase;
+
+  font-weight: 800;
+  font-size: 1em;
+}
+
+.card__types {
+  position: absolute;
+  bottom: 0.2em;
+  left: 0.2em;
+}
+
+.card__type {
+  padding: 0.08em 0.6em 0.12em;
+  margin-left: 0.3em;
+  border-radius: 3px;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.card__id {
+  position: absolute;
+  top: 0.2em;
+  left: 0.5em;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(50, 50, 50);
+}

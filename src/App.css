@@ -1,0 +1,58 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--backdround-gradient);
+}
+
+.app__title {
+  font-size: 1em;
+  margin: 2em 0 0;
+  color: #505050;
+}
+
+.app__search {
+  width: 30em;
+  height: 2.5em;
+
+  margin-bottom: 4em;
+  padding: 0.3em 0.5em 0.1em;
+
+  background: var(--container);
+  border: 2px solid var(--container-detail);
+  border-radius: 5px;
+  outline: none;
+  display: flex;
+  align-items: center;
+
+  font-weight: 600;
+}
+.app__search:focus {
+  background: var(--container-secundary);
+}
+
+.app__card-container {
+  width: 100%;
+  padding: 0 10em;
+
+  display: grid;
+  justify-items: center;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.app__button {
+  padding: 1em 2em;
+  margin: 2em;
+
+  font-weight: 600;
+  background: var(--container-detail);
+  color: white;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
