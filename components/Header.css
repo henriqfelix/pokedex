@@ -6,6 +6,9 @@
   justify-content: center;
   align-items: center;
   background: var(--dark-color);
+
+  position: fixed;
+  z-index: 10;
 }
 
 .header__pokemon {

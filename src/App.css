@@ -8,6 +8,7 @@
   align-items: center;
   position: relative;
   background: var(--backdround-gradient);
+  padding-top: 7em;
   padding-bottom: 16em;
 }
 

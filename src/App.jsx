@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Card from "../components/Card";
@@ -18,6 +19,8 @@ function App() {
   const [page4, setPage4] = useState([]);
 
   const [isSearching, setIsSearching] = useState(false);
+
+  const [parent] = useAutoAnimate();
 
   const { data, isFetching, isError } = useQuery(
     "pokemons",
@@ -112,37 +115,39 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <>
       <Header />
-      <li id="ward_top"></li>
-      <div className="app_search-container">
-        {isFetching && <p>Loading...</p>}
-        {isError && <p>Algo deu errado...</p>}
+      <div className="app">
+        <li id="ward_top"></li>
+        <div className="app_search-container">
+          {isFetching && <p>Loading...</p>}
+          {isError && <p>Algo deu errado...</p>}
 
-        {!isFetching && (
-          <div>
-            <h1 className="app__title">Search Pokémon</h1>
-            <input
-              className="app__search"
-              type="text"
-              onChange={(e) => filterPokemon(e.target.value)}
-            />
-          </div>
-        )}
-      </div>
-      <div className="app__card-container">
-        {!isSearching
-          ? currentPokemons.map((pokemon, index) => (
-              <Card pokemon={pokemon} key={index} />
-            ))
-          : filteredPokemons.map((pokemon, index) => (
-              <Card pokemon={pokemon} key={index} />
-            ))}
-      </div>
+          {!isFetching && (
+            <div>
+              <h1 className="app__title">Search Pokémon</h1>
+              <input
+                className="app__search"
+                type="text"
+                onChange={(e) => filterPokemon(e.target.value)}
+              />
+            </div>
+          )}
+        </div>
+        <div className="app__card-container">
+          {!isSearching
+            ? currentPokemons.map((pokemon, index) => (
+                <Card pokemon={pokemon} key={index} />
+              ))
+            : filteredPokemons.map((pokemon, index) => (
+                <Card pokemon={pokemon} key={index} />
+              ))}
+        </div>
 
-      <li id="ward_bottom"></li>
-      <Footer />
-    </div>
+        <li id="ward_bottom"></li>
+        <Footer />
+      </div>
+    </>
   );
 }
 
