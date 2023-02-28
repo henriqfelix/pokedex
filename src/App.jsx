@@ -6,6 +6,7 @@ import axios from "axios";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 // import { CgSearch } from 'react-icons/cg';
 
 function App() {
@@ -119,10 +120,9 @@ function App() {
       <Header />
       <div className="app">
         <li id="ward_top"></li>
+        {isFetching && <Loader />}
+        {isError && <p>Algo deu errado...</p>}
         <div className="app_search-container">
-          {isFetching && <p>Loading...</p>}
-          {isError && <p>Algo deu errado...</p>}
-
           {!isFetching && (
             <div>
               <h1 className="app__title">Search Pokémon</h1>

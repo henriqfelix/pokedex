@@ -42,6 +42,7 @@
   --container-detail: #b5b5b5;
   --dark-color: #222222;
   --backdround-gradient: linear-gradient(to right, #f1f1f1, #e3e3e3);
+  --loader: linear-gradient(#ff70e2, #3ed5e6, #5fe46f);
 }
 
 * {

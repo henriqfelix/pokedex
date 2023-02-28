@@ -58,19 +58,19 @@
 
 .card__title {
   position: absolute;
-  bottom: 1.5em;
+  bottom: 1.7em;
   left: 0;
   margin: 0 0.4em;
   text-transform: uppercase;
 
   font-weight: 800;
-  font-size: 1em;
+  font-size: 0.875em;
 }
 
 .card__types {
   position: absolute;
   bottom: 0.2em;
-  left: 0.2em;
+  left: 0.16em;
 }
 
 .card__type {
