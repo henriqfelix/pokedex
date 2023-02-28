@@ -1,7 +1,59 @@
+.footer * {
+  color: var(--container);
+}
+
 .footer {
   height: 14em;
   width: 100%;
-  background: var(--dark-color);
+  padding: 1em;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   position: absolute;
   bottom: 0;
+
+  background: var(--dark-color);
+}
+
+.footer__pokemon {
+  width: 8em;
+  padding-top: 1em;
+}
+
+.footer__pokeballs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-top: 0.6em;
+}
+
+.footer__pokeball {
+  width: 0.8em;
+}
+
+.footer span {
+  font-weight: 200;
+  font-size: 0.875em;
+  letter-spacing: 0.05em;
+
+  position: absolute;
+  bottom: 2.5em;
+}
+.footer span a {
+  font-weight: 500;
+  text-decoration: none;
+
+  padding: 0 0.5em 0.1em;
+
+  color: var(--dark-color);
+  background: var(--container);
+
+  transition: 0.2s;
+}
+
+.footer span a:hover {
+  color: var(--container);
+  background: var(--dark);
 }
