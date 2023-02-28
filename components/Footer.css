@@ -1,0 +1,7 @@
+.footer {
+  height: 14em;
+  width: 100%;
+  background: var(--dark-color);
+  position: absolute;
+  bottom: 0;
+}

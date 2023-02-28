@@ -40,6 +40,7 @@
   --container: #eeeeee;
   --container-secundary: #dedede;
   --container-detail: #b5b5b5;
+  --dark-color: #222222;
   --backdround-gradient: linear-gradient(to right, #f1f1f1, #e3e3e3);
 }
 
@@ -48,9 +49,38 @@
   margin: 0;
   padding: 0;
   font-family: "Montserrat";
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   width: 100%;
   overflow-y: scroll;
+}
+
+@media screen and (min-width: 550px) {
+  .app__card-container {
+    max-width: 550px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .app__card-container {
+    max-width: 740px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .app__card-container {
+    max-width: 900px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .app__card-container {
+    max-width: 1100px;
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

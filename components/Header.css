@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #222222;
+  background: var(--dark-color);
 }
 
 .header__title {

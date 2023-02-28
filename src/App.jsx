@@ -1,14 +1,13 @@
 import "./App.css";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Card from "../components/Card";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 // import { CgSearch } from 'react-icons/cg';
 
 function App() {
-  const appRef = useRef();
-
   const [pokemons, setPokemons] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [currentPokemons, setCurrentPokemons] = useState([]);
@@ -40,17 +39,17 @@ function App() {
       let filterPage3 = [];
       let filterPage4 = [];
       response.map((pokemon) => {
-        if (pokemon.data.id <= 300) {
+        if (pokemon.data.id <= 252) {
           filterPage1.push(pokemon);
           setPage1(filterPage1);
           setCurrentPokemons(filterPage1);
-        } else if (pokemon.data.id >= 301 && pokemon.data.id <= 600) {
+        } else if (pokemon.data.id >= 253 && pokemon.data.id <= 504) {
           filterPage2.push(pokemon);
           setPage2(filterPage2);
-        } else if (pokemon.data.id >= 601 && pokemon.data.id <= 900) {
+        } else if (pokemon.data.id >= 505 && pokemon.data.id <= 756) {
           filterPage3.push(pokemon);
           setPage3(filterPage3);
-        } else if (pokemon.data.id >= 901) {
+        } else if (pokemon.data.id >= 757) {
           filterPage4.push(pokemon);
           setPage4(filterPage4);
         }
@@ -65,25 +64,23 @@ function App() {
     const intersectionObserver = new IntersectionObserver((entries) => {
       entries.map((entry) => {
         if (entry.target.id === "ward_top") {
-          console.log(entry);
           if (entry.isIntersecting) {
             setCurrentPokemons(page1);
           }
         }
         if (entry.target.id === "ward_bottom") {
-          console.log(entry);
           if (entry.isIntersecting) {
-            if (currentPokemons.length === 300) {
+            if (currentPokemons.length === 252) {
               setCurrentPokemons((currentPokemonsInsideState) => [
                 ...currentPokemonsInsideState.concat(page2),
               ]);
             }
-            if (currentPokemons.length === 600) {
+            if (currentPokemons.length === 504) {
               setCurrentPokemons((currentPokemonsInsideState) => [
                 ...currentPokemonsInsideState.concat(page3),
               ]);
             }
-            if (currentPokemons.length === 900) {
+            if (currentPokemons.length === 756) {
               setCurrentPokemons((currentPokemonsInsideState) => [
                 ...currentPokemonsInsideState.concat(page4),
               ]);
@@ -118,21 +115,22 @@ function App() {
     <div className="app">
       <Header />
       <li id="ward_top"></li>
-      <div className="app_search-container"></div>
-      {isFetching && <p>Loading...</p>}
-      {isError && <p>Algo deu errado...</p>}
+      <div className="app_search-container">
+        {isFetching && <p>Loading...</p>}
+        {isError && <p>Algo deu errado...</p>}
 
-      {!isFetching && (
-        <div>
-          <h1 className="app__title">Search Pokémon</h1>
-          <input
-            className="app__search"
-            type="text"
-            onChange={(e) => filterPokemon(e.target.value)}
-          />
-        </div>
-      )}
-      <div ref={appRef} className="app__card-container">
+        {!isFetching && (
+          <div>
+            <h1 className="app__title">Search Pokémon</h1>
+            <input
+              className="app__search"
+              type="text"
+              onChange={(e) => filterPokemon(e.target.value)}
+            />
+          </div>
+        )}
+      </div>
+      <div className="app__card-container">
         {!isSearching
           ? currentPokemons.map((pokemon, index) => (
               <Card pokemon={pokemon} key={index} />
@@ -143,6 +141,7 @@ function App() {
       </div>
 
       <li id="ward_bottom"></li>
+      <Footer />
     </div>
   );
 }
