@@ -13,7 +13,7 @@ const Card = ({ pokemon }) => {
   const types = pokemon.data.types;
   let id = pokemon.data.id.toString();
   let type1 = types[0].type.name;
-  let type2 = "";
+  let type2;
   if (types[1]) {
     type2 = types[1].type.name;
   }
