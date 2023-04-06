@@ -29,12 +29,14 @@ function App() {
       let pokemonsDetails = [];
 
       for (let i = 1; i <= 1008; i++) {
+        if (i === 980 || i === 987) continue;
         pokemonsDetails.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
       }
 
       const response = await axios.all(
         pokemonsDetails.map((pokemonDetails) => axios.get(pokemonDetails))
       );
+
       setPokemons(response);
       setFilteredPokemons(response);
 
@@ -54,7 +56,6 @@ function App() {
           filterPage3.push(pokemon);
           setPage3(filterPage3);
         } else if (pokemon.data.id >= 757) {
-          console.log(pokemon);
           filterPage4.push(pokemon);
           setPage4(filterPage4);
         }
