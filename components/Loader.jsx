@@ -4,7 +4,7 @@ import pokeball from "../src/assets/pokeball.png";
 
 const Loader = () => {
   return (
-    <div class="loader__container">
+    <div className="loader__container">
       <img className="loader__pokeball" src={pokeball} alt="loader" />
       <span></span>
       <span></span>

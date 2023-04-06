@@ -54,6 +54,7 @@ function App() {
           filterPage3.push(pokemon);
           setPage3(filterPage3);
         } else if (pokemon.data.id >= 757) {
+          console.log(pokemon);
           filterPage4.push(pokemon);
           setPage4(filterPage4);
         }
@@ -121,9 +122,13 @@ function App() {
       <div className="app">
         <li id="ward_top"></li>
         {isFetching && <Loader />}
-        {isError && <p>Algo deu errado...</p>}
+        {isError && (
+          <p className="app__error">
+            Ocorreu um erro inesperado, tente novamente mais tarde...
+          </p>
+        )}
         <div className="app_search-container">
-          {!isFetching && (
+          {!isFetching && !isError && (
             <div>
               <h1 className="app__title">Search Pokémon</h1>
               <input
