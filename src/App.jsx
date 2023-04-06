@@ -121,8 +121,8 @@ function App() {
       <Header />
       <div className="app">
         <li id="ward_top"></li>
-        {/* {isFetching && <Loader />} */}
-        {!isError && (
+        {isFetching && <Loader />}
+        {isError && (
           <p className="app__error">
             Ocorreu um erro inesperado, tente novamente mais tarde...
           </p>
